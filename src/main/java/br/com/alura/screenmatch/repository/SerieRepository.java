@@ -27,4 +27,10 @@ Optional<Serie> findByTituloContainingIgnoreCase(String nomeSerie);
     @Query("select e from Serie s join s.episodos e where e.titulo ilike %:trechoEpisodio%")
     List<Episodio> episodiosPorTrecho(String trechoEpisodio);
 
+    @Query("select e from Serie s join s.episodos e where s = :serie order by e.avaliacao desc limit 5")
+    List<Episodio> topEpisodiosPorSerie(Serie serie);
+
+    @Query("select e from Serie s join s.episodos e where s = :serie and year(e.dataLancamento) >= :anoLancamento")
+    List<Episodio> episodiosPorSerieEAno(Serie serie, String anoLancamento);
 }
+

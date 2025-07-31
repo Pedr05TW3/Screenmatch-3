@@ -2,7 +2,7 @@ package br.com.alura.screenmatch.model;
 
 import com.fasterxml.jackson.annotation.JsonAlias;
 
-public enum Categoria {
+public enum  Categoria {
     ACAO("Action", "Ação"),
     ROMANCE("Romance", "Romance"),
     COMEDIA("Comedy", "Comédia"),
